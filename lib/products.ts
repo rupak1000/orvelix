@@ -71,7 +71,7 @@ const products: Product[] = [
     inStock: true,
     freeShipping: true,
     tags: ["coffee table", "walnut", "mid-century", "furniture"],
-  [
+  
     }, 
   {
     id: "lifestyle-5",
