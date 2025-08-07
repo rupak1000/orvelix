@@ -1,19 +1,31 @@
-"use client"
+"use client";
 
-import { useAuth } from "@/contexts/auth-context"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { User, Package, Heart, Settings, MapPin, CreditCard } from "lucide-react"
-import Link from "next/link"
-import { redirect } from "next/navigation"
+import { useAuth } from "@/contexts/auth-context";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { User, Package, Heart, Settings, MapPin, CreditCard } from "lucide-react";
+import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AccountPage() {
-  const { user } = useAuth()
+  const router = useRouter();
+  const { user, loading } = useAuth(); // Assume useAuth provides a loading state
 
-  if (!user) {
-    redirect("/login")
+  useEffect(() => {
+    // Only redirect if authentication is not loading and there is no user
+    if (!loading && !user) {
+      router.push("/login");
+    }
+  }, [user, loading, router]);
+
+  // This is the crucial fix:
+  // If the user object is not available or still loading,
+  // render a loading state or return null to prevent the TypeError.
+  if (loading || !user) {
+    return <div>Loading...</div>; 
   }
-
+  
   return (
     <div className="max-w-7xl mx-auto px-8 py-16">
       <div className="mb-12">
@@ -165,5 +177,5 @@ export default function AccountPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

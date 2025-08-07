@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Learn how Hemolota protects and uses your personal information.",
+  description: "Learn how Orvelix protects and uses your personal information.",
 }
 
 export default function PrivacyPage() {
@@ -10,12 +10,12 @@ export default function PrivacyPage() {
     <div className="max-w-4xl mx-auto px-8 py-16">
       <div className="prose prose-lg max-w-none">
         <h1 className="text-4xl font-playfair font-bold text-gray-900 mb-8">Privacy Policy</h1>
-        <p className="text-gray-600 text-lg mb-8">Last updated: January 1, 2024</p>
+        <p className="text-gray-600 text-lg mb-8">Last updated: January 1, 2025</p>
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">Introduction</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            At Hemolota, we are committed to protecting your privacy and ensuring the security of your personal
+            At Orvelix, we are committed to protecting your privacy and ensuring the security of your personal
             information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when
             you visit our website or make a purchase from us.
           </p>
@@ -113,13 +113,13 @@ export default function PrivacyPage() {
             If you have any questions about this Privacy Policy or our data practices, please contact us at:
           </p>
           <div className="mt-4 p-6 bg-gray-50 rounded-xl">
-            <p className="text-gray-900 font-medium">Hemolota Privacy Team</p>
-            <p className="text-gray-600">Email: privacy@hemolota.com</p>
-            <p className="text-gray-600">Phone: +1 (555) 123-4567</p>
+            <p className="text-gray-900 font-medium">Orvelix support Team</p>
+            <p className="text-gray-600">Email: support@orvelix.com</p>
+            <p className="text-gray-600">Phone: +1 (307) 400-7431</p>
             <p className="text-gray-600">
-              Address: 123 Design District
+              Address: 30 N Gould St Ste N,
               <br />
-              New York, NY 10001
+              Sheridan, WY 82801
             </p>
           </div>
         </section>

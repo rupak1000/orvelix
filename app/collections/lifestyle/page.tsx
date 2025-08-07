@@ -3,7 +3,8 @@ import { getProductsByCategory } from "@/lib/products"
 import ProductCard from "@/components/product-card"
 import ProductFilters from "@/components/product-filters"
 import type { Metadata } from "next"
-
+import Image from "next/image";
+import type { Product } from "@/lib/types";
 export const metadata: Metadata = {
   title: "Lifestyle Collection - Orvelix",
   description: "Curated essentials for modern living. Premium products that elevate your daily life.",

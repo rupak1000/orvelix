@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Read Hemolota's terms and conditions for using our services.",
+  description: "Read Orvelix's terms and conditions for using our services.",
 }
 
 export default function TermsPage() {
@@ -10,12 +10,12 @@ export default function TermsPage() {
     <div className="max-w-4xl mx-auto px-8 py-16">
       <div className="prose prose-lg max-w-none">
         <h1 className="text-4xl font-playfair font-bold text-gray-900 mb-8">Terms of Service</h1>
-        <p className="text-gray-600 text-lg mb-8">Last updated: January 1, 2024</p>
+        <p className="text-gray-600 text-lg mb-8">Last updated: January 1, 2025</p>
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">Agreement to Terms</h2>
           <p className="text-gray-600 leading-relaxed">
-            By accessing and using Hemolota's website and services, you accept and agree to be bound by the terms and
+            By accessing and using Orvelix's website and services, you accept and agree to be bound by the terms and
             provision of this agreement. If you do not agree to abide by the above, please do not use this service.
           </p>
         </section>
@@ -23,7 +23,7 @@ export default function TermsPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">Use License</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            Permission is granted to temporarily download one copy of the materials on Hemolota's website for personal,
+            Permission is granted to temporarily download one copy of the materials on Orvelix's website for personal,
             non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under
             this license you may not:
           </p>
@@ -94,9 +94,9 @@ export default function TermsPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">Limitation of Liability</h2>
           <p className="text-gray-600 leading-relaxed">
-            In no event shall Hemolota or its suppliers be liable for any damages (including, without limitation,
+            In no event shall Orvelix or its suppliers be liable for any damages (including, without limitation,
             damages for loss of data or profit, or due to business interruption) arising out of the use or inability to
-            use the materials on Hemolota's website, even if Hemolota or an authorized representative has been notified
+            use the materials on Orvelix's website, even if Orvelix or an authorized representative has been notified
             orally or in writing of the possibility of such damage.
           </p>
         </section>
@@ -115,13 +115,13 @@ export default function TermsPage() {
             If you have any questions about these Terms of Service, please contact us:
           </p>
           <div className="mt-4 p-6 bg-gray-50 rounded-xl">
-            <p className="text-gray-900 font-medium">Hemolota Legal Team</p>
-            <p className="text-gray-600">Email: legal@hemolota.com</p>
-            <p className="text-gray-600">Phone: +1 (555) 123-4567</p>
+            <p className="text-gray-900 font-medium">Orvelix Support Team</p>
+            <p className="text-gray-600">Email: support@orvelix.com</p>
+            <p className="text-gray-600">Phone: +1 (307) 400-7431</p>
             <p className="text-gray-600">
-              Address: 123 Design District
+              Address: 30 N Gould St Ste N,
               <br />
-              New York, NY 10001
+              Sheridan, WY 82801
             </p>
           </div>
         </section>

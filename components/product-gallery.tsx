@@ -1,23 +1,20 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import type { Product } from "@/lib/types"
+import { useState } from "react";
+import Image from "next/image";
+import type { Product } from "@/lib/types";
 
 interface ProductGalleryProps {
-  product: Product
+  product: Product;
 }
 
 export default function ProductGallery({ product }: ProductGalleryProps) {
-  const [selectedImage, setSelectedImage] = useState(0)
+  const [selectedImage, setSelectedImage] = useState(0);
 
-  // Mock additional images for gallery
-  const images = [
-    product.image,
-    "/placeholder.svg?height=600&width=600&text=Image+2",
-    "/placeholder.svg?height=600&width=600&text=Image+3",
-    "/placeholder.svg?height=600&width=600&text=Image+4",
-  ]
+  // Safely handle undefined or empty images array
+  const images = Array.isArray(product.images) && product.images.length > 0
+    ? product.images
+    : ["/placeholder.svg?height=600&width=600&text=No+Image+Available"];
 
   return (
     <div className="space-y-6">
@@ -33,7 +30,7 @@ export default function ProductGallery({ product }: ProductGalleryProps) {
       </div>
 
       {/* Thumbnail Images */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className={`grid grid-cols-${Math.min(images.length, 4)} gap-4`}>
         {images.map((image, index) => (
           <button
             key={index}
@@ -52,5 +49,5 @@ export default function ProductGallery({ product }: ProductGalleryProps) {
         ))}
       </div>
     </div>
-  )
+  );
 }

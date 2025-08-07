@@ -54,19 +54,8 @@ export default function LoginPage() {
         </div>
 
         <div className="bg-white rounded-2xl shadow-lg p-8">
-          {/* Demo Account Info */}
-          <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
-            <h3 className="text-sm font-medium text-amber-800 mb-2">Demo Account</h3>
-            <p className="text-sm text-amber-700 mb-2">Use these credentials to test the platform:</p>
-            <div className="text-sm text-amber-700 space-y-1">
-              <p>
-                <strong>Email:</strong> demo@orvelix.com
-              </p>
-              <p>
-                <strong>Password:</strong> Any password
-              </p>
-            </div>
-          </div>
+         
+        
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (

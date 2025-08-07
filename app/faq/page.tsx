@@ -212,14 +212,14 @@ export default function FAQPage() {
                 Contact Us
               </a>
               <a
-                href="tel:+15551234567"
+                href="tel:+13074007431"
                 className="inline-flex items-center justify-center px-8 py-3 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-50 transition-colors"
               >
-                Call: (555) 123-4567
+                Call: +1 (307) 400-7431
               </a>
             </div>
             <div className="mt-6 text-sm text-gray-500">
-              <p>Customer Service Hours: Monday - Friday, 9 AM - 6 PM EST</p>
+              <p>Customer Service Hours: Monday – Friday, 9 AM – 6 PM  MT</p>
             </div>
           </CardContent>
         </Card>

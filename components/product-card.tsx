@@ -1,57 +1,61 @@
-"use client"
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { Heart, ShoppingBag, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { useCart } from "@/contexts/cart-context"
-import { useToast } from "@/hooks/use-toast"
-import type { Product } from "@/lib/types"
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Heart, ShoppingBag, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/contexts/cart-context";
+import { useToast } from "@/hooks/use-toast";
+import type { Product } from "@/lib/types";
 
 interface ProductCardProps {
-  product: Product
+  product: Product;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const [isLoading, setIsLoading] = useState(false)
-  const [isWishlisted, setIsWishlisted] = useState(false)
-  const { addItem } = useCart()
-  const { toast } = useToast()
+  const [isLoading, setIsLoading] = useState(false);
+  const [isWishlisted, setIsWishlisted] = useState(false);
+  const { addItem } = useCart();
+  const { toast } = useToast();
 
   const handleAddToCart = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
-      // Pass the product and a quantity of 1 for quick add
-      addItem(product, 1)
-
+      addItem(product, 1);
       toast({
         title: "Added to cart",
         description: `${product.name} has been added to your cart.`,
-      })
+      });
     } catch (error) {
       toast({
         title: "Error",
         description: "Failed to add item to cart. Please try again.",
         variant: "destructive",
-      })
+      });
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const handleWishlist = () => {
-    setIsWishlisted(!isWishlisted)
+    setIsWishlisted(!isWishlisted);
     toast({
       title: isWishlisted ? "Removed from wishlist" : "Added to wishlist",
       description: `${product.name} has been ${isWishlisted ? "removed from" : "added to"} your wishlist.`,
-    })
-  }
+    });
+  };
 
   const discountPercentage = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
-    : 0
+    : 0;
+
+  // Safely select the first valid image or fallback
+  const imageSrc = Array.isArray(product.images) && product.images.length > 0
+    ? product.images[0]
+    : "/img/placeholder.jpg";
 
   return (
     <div className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300">
@@ -59,23 +63,24 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="relative aspect-[4/5] overflow-hidden bg-gray-50">
         <Link href={`/products/${product.id}`}>
           <Image
-            src={product.image || "/placeholder.svg?height=400&width=320"}
+            src={imageSrc}
             alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
+            onError={() => console.error(`Failed to load image: ${imageSrc} for product ${product.id}`)}
           />
         </Link>
 
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-2">
-          {product.isNew && (
+          {product.isNewArrival && (
             <Badge className="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-medium">New</Badge>
           )}
           {discountPercentage > 0 && (
             <Badge className="bg-red-500 hover:bg-red-600 text-white text-xs font-medium">-{discountPercentage}%</Badge>
           )}
-          {product.isBestSeller && (
-            <Badge className="bg-amber-500 hover:bg-amber-600 text-white text-xs font-medium">Best Seller</Badge>
+          {product.isFeatured && (
+            <Badge className="bg-amber-500 hover:bg-amber-600 text-white text-xs font-medium">Featured</Badge>
           )}
         </div>
 
@@ -176,5 +181,5 @@ export default function ProductCard({ product }: ProductCardProps) {
         </Button>
       </div>
     </div>
-  )
+  );
 }

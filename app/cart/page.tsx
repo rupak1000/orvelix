@@ -1,15 +1,16 @@
-"use client"
 
-import { useCart } from "@/contexts/cart-context"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+"use client";
+
+import { useCart } from "@/contexts/cart-context";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function CartPage() {
-  const { items, updateQuantity, removeItem, total } = useCart()
+  const { items, updateQuantity, removeItem, total } = useCart();
 
   if (items.length === 0) {
     return (
@@ -31,12 +32,12 @@ export default function CartPage() {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  const shipping = total > 100 ? 0 : 15.99
-  const tax = total * 0.08
-  const finalTotal = total + shipping + tax
+  const shipping = total > 100 ? 0 : 15.99;
+  const tax = total * 0.08;
+  const finalTotal = total + shipping + tax;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -69,10 +70,11 @@ export default function CartPage() {
                     {/* Product Image */}
                     <div className="relative w-full sm:w-24 lg:w-32 h-48 sm:h-24 lg:h-32 flex-shrink-0 mx-auto sm:mx-0">
                       <Image
-                        src={item.image || "/placeholder.svg?height=200&width=200"}
+                        src={Array.isArray(item.images) && item.images.length > 0 ? item.images[0] : "/img/placeholder.jpg"}
                         alt={item.name}
                         fill
                         className="object-cover rounded-xl"
+                        onError={() => console.error(`Failed to load image for product ${item.id}: ${item.images[0] || "no image"}`)}
                       />
                     </div>
 
@@ -222,5 +224,5 @@ export default function CartPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

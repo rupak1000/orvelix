@@ -110,14 +110,14 @@ export default function FeaturedProducts() {
             </div>
             <div className="text-3xl font-bold text-gray-900 mb-2">4.9/5</div>
             <div className="text-gray-600">Average Rating</div>
-            <div className="text-sm text-gray-500 mt-1">From 2,500+ reviews</div>
+            <div className="text-sm text-gray-500 mt-1">From 300+ reviews</div>
           </div>
 
           <div className="text-center p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
             <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-2xl mx-auto mb-4">
               <Users className="h-8 w-8 text-green-600" />
             </div>
-            <div className="text-3xl font-bold text-gray-900 mb-2">50K+</div>
+            <div className="text-3xl font-bold text-gray-900 mb-2">1K+</div>
             <div className="text-gray-600">Happy Customers</div>
             <div className="text-sm text-gray-500 mt-1">Worldwide community</div>
           </div>

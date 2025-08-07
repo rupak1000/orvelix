@@ -128,15 +128,7 @@ export default function Footer() {
 
               {/* Newsletter Signup */}
               <div className="mb-6">
-                <p className="text-gray-600 mb-4">Subscribe to get updates on new arrivals and exclusive offers.</p>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 border-gray-300 focus:ring-amber-500 focus:border-amber-500"
-                  />
-                  <Button className="bg-amber-600 hover:bg-amber-700 text-white px-6">Subscribe</Button>
-                </div>
+                
               </div>
 
               {/* Contact Info */}
@@ -147,11 +139,11 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-3 text-gray-600">
                   <Phone className="h-4 w-4 text-amber-600" />
-                  <span className="text-sm">+1 (555) 123-4567</span>
+                  <span className="text-sm">+1 (307) 400-7431</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-600">
                   <MapPin className="h-4 w-4 text-amber-600" />
-                  <span className="text-sm">123 Premium St, Luxury City, LC 12345</span>
+                  <span className="text-sm">30 N Gould St Ste N, Sheridan, WY 82801</span>
                 </div>
               </div>
             </div>
@@ -162,7 +154,7 @@ export default function Footer() {
         <div className="border-t border-gray-200 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-600 text-sm text-center md:text-left">
-              © 2024 Orvelix. All rights reserved. | Crafted with care for premium lifestyle.
+              © 2025 Orvelix. All rights reserved. | Crafted with care for premium lifestyle.
             </div>
 
             {/* Payment Methods */}
